@@ -23,8 +23,30 @@ public class CreateNewAdminUserPageTest extends TestngBase {
 		
 		CreateNewAdminUserPage createnewadminuser = new CreateNewAdminUserPage(driver);
 		createnewadminuser.clickOnAdminUser();
-		createnewadminuser.clickOnCreateAdminUser();
-		
+		createnewadminuser.clickOnCreateNewAdminUser();
+		createnewadminuser.enterUsernameOnUsernameField();
+		createnewadminuser.enterPasswordOnPasswordField();
+		createnewadminuser.clickOnSave();
+		createnewadminuser.clickOnReset();
 	}
+	
+	public void verifySearchAdminUsers() throws IOException
+	{
+		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameField(userName);
+		loginpage.enterPasswordOnPasswordField(password);
+		loginpage.clickOnCheckBox();
+		loginpage.clickOnSigninButton();
 
+		CreateNewAdminUserPage createnewadminuser = new CreateNewAdminUserPage(driver);
+		createnewadminuser.clickOnAdminUser();
+		createnewadminuser.clickOnSearch();
+		createnewadminuser.enterUsernameOnSearchbox();
+		createnewadminuser.selectUserTypeOnSearch();
+		createnewadminuser.clickOnSearchInsideSearch();
+		createnewadminuser.clickOnResetOnSearch();
+
+}
 }
