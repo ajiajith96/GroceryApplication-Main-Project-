@@ -6,8 +6,8 @@
       <class name="TestScript.CreateNewAdminUserPageTest">
         <methods>
           <include name="initializeBrowser"/>
+          <include name="verifySearchAdminUsers"/>
           <include name="closeAndQuit"/>
-          <include name="verifyUserAdminCreation"/>
         </methods>
       </class> <!-- TestScript.CreateNewAdminUserPageTest -->
     </classes>

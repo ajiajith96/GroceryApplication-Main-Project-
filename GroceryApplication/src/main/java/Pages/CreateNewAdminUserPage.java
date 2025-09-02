@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import net.bytebuddy.build.HashCodeAndEqualsPlugin.Identity;
+
 public class CreateNewAdminUserPage {
 	public WebDriver driver;
 	public CreateNewAdminUserPage(WebDriver driver) {
@@ -22,7 +24,7 @@ public class CreateNewAdminUserPage {
     @FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")private WebElement CreateNewAdminUser;
     @FindBy(id = "username")private WebElement username;
     @FindBy(id = "password")private WebElement password;
-    @FindBy(name = "user_type")private WebElement userType;
+    @FindBy(xpath = "//select[@class='form-control' and @id = 'user_type']")private WebElement userType;
     @FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger' and @name='Create']")private WebElement save;
     @FindBy(xpath = "//div[@class='card-footer center']//a[text()='Reset']")private WebElement resetOnAddUser;
 	public void clickOnCreateNewAdminUser() {
@@ -40,7 +42,7 @@ public class CreateNewAdminUserPage {
 
 	public void selectUserType() {
 		Select select = new Select(userType);
-		select.selectByIndex(2);
+		select.selectByIndex(2);;
 	}
 
 	public void clickOnSave() {
@@ -53,9 +55,9 @@ public class CreateNewAdminUserPage {
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")private WebElement searchUser;
 	
-    @FindBy(name = "un")private WebElement usernameOnSearch;
+    @FindBy(xpath = "//input[@class='form-control' and @id = 'un']")private WebElement usernameOnSearch;
 
-	@FindBy(id = "ut")private WebElement userTypeOnSearch;
+	@FindBy(xpath = "//select[@class='form-control' and @id = 'ut']")private WebElement userTypeOnSearch;
 
 	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger' and @name='Search']")private WebElement search;
 	
@@ -69,12 +71,11 @@ public class CreateNewAdminUserPage {
 	public void enterUsernameOnSearchbox() {
 		usernameOnSearch.sendKeys("Ajith");
 		
-		Select select = new Select(userTypeOnSearch);
 	}
 
 	public void selectUserTypeOnSearch() {
 		Select select = new Select(userTypeOnSearch);
-		select.selectByIndex(3);
+		select.selectByIndex(2);
 		
 	}
 

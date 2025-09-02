@@ -26,10 +26,12 @@ public class CreateNewAdminUserPageTest extends TestngBase {
 		createnewadminuser.clickOnCreateNewAdminUser();
 		createnewadminuser.enterUsernameOnUsernameField();
 		createnewadminuser.enterPasswordOnPasswordField();
+		createnewadminuser.selectUserType();
 		createnewadminuser.clickOnSave();
-		createnewadminuser.clickOnReset();
+		//createnewadminuser.clickOnReset();
 	}
 	
+	@Test
 	public void verifySearchAdminUsers() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
@@ -46,7 +48,7 @@ public class CreateNewAdminUserPageTest extends TestngBase {
 		createnewadminuser.enterUsernameOnSearchbox();
 		createnewadminuser.selectUserTypeOnSearch();
 		createnewadminuser.clickOnSearchInsideSearch();
-		createnewadminuser.clickOnResetOnSearch();
+		//createnewadminuser.clickOnResetOnSearch();
 
 }
 }
