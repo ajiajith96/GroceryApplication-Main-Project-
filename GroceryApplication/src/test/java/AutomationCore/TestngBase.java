@@ -22,7 +22,7 @@ public class TestngBase {
 		driver = new FirefoxDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");  //open url.
 		driver.manage().window().maximize();   //maximize the url window.
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//implicit wait applied for 5 sec
 	}
     @AfterMethod
     public void driverQuit(ITestResult iTestResult) throws IOException {
