@@ -31,12 +31,12 @@ public class CreateNewAdminUserPage {
 		CreateNewAdminUser.click();
 	}
 	
-	public void enterUsernameOnUsernameField() {
-		username.sendKeys("Ajith");
+	public void enterUsernameOnUsernameField(String adminUserName) {
+		username.sendKeys(adminUserName);
 	}
 
-	public void enterPasswordOnPasswordField() {
-		password.sendKeys("ajithgopal");
+	public void enterPasswordOnPasswordField(String adminUserPassword) {
+		password.sendKeys(adminUserPassword);
 
 	}
 

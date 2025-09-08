@@ -2,24 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-02T12:58:36 IST" name="Default suite" finished-at="2025-09-02T12:58:51 IST" duration-ms="15463">
+  <suite started-at="2025-09-08T13:03:11 IST" name="Default suite" finished-at="2025-09-08T13:03:22 IST" duration-ms="10637">
     <groups>
     </groups>
-    <test started-at="2025-09-02T12:58:36 IST" name="Default test" finished-at="2025-09-02T12:58:51 IST" duration-ms="15463">
-      <class name="TestScript.CreateNewAdminUserPageTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:TestScript.CreateNewAdminUserPageTest@5c6648b0]" started-at="2025-09-02T12:58:36 IST" name="initializeBrowser" finished-at="2025-09-02T12:58:45 IST" duration-ms="9416" status="PASS">
+    <test started-at="2025-09-08T13:03:11 IST" name="Default test" finished-at="2025-09-08T13:03:22 IST" duration-ms="10637">
+      <class name="TestScript.ManageNewsTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:TestScript.ManageNewsTest@48f2bd5b]" started-at="2025-09-08T13:03:11 IST" name="initializeBrowser" finished-at="2025-09-08T13:03:18 IST" duration-ms="7200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifySearchAdminUsers()[pri:0, instance:TestScript.CreateNewAdminUserPageTest@5c6648b0]" started-at="2025-09-02T12:58:45 IST" name="verifySearchAdminUsers" finished-at="2025-09-02T12:58:51 IST" duration-ms="5933" status="PASS">
+        <test-method signature="verifyUserAdminCreation()[pri:0, instance:TestScript.ManageNewsTest@48f2bd5b]" started-at="2025-09-08T13:03:18 IST" name="verifyUserAdminCreation" finished-at="2025-09-08T13:03:22 IST" duration-ms="3353" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchAdminUsers -->
-        <test-method is-config="true" signature="closeAndQuit()[pri:0, instance:TestScript.CreateNewAdminUserPageTest@5c6648b0]" started-at="2025-09-02T12:58:51 IST" name="closeAndQuit" finished-at="2025-09-02T12:58:51 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyUserAdminCreation -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:TestScript.ManageNewsTest@48f2bd5b]" started-at="2025-09-08T13:03:22 IST" name="driverQuit" finished-at="2025-09-08T13:03:22 IST" duration-ms="8" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserAdminCreation status=SUCCESS method=ManageNewsTest.verifyUserAdminCreation()[pri:0, instance:TestScript.ManageNewsTest@48f2bd5b] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeAndQuit -->
-      </class> <!-- TestScript.CreateNewAdminUserPageTest -->
+        </test-method> <!-- driverQuit -->
+      </class> <!-- TestScript.ManageNewsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
