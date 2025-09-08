@@ -1,6 +1,7 @@
 package AutomationCore;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,7 @@ public class TestngBase {
 		driver = new FirefoxDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");  //open url.
 		driver.manage().window().maximize();   //maximize the url window.
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
     @AfterMethod
     public void driverQuit(ITestResult iTestResult) throws IOException {

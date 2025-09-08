@@ -23,11 +23,11 @@ public class ManageNewsTest extends TestngBase {
 		ManageNewsPage newnews = new ManageNewsPage(driver);
 		newnews.clickOnManageNews();
 		newnews.clickOnNewNews();
-		//String newsTitle = ExcelUtility.getStringData(1, 0, "NewsPage");
+		String newsTitle = ExcelUtility.getStringData(1, 0, "NewsPage");
 		RandomDataUtility random = new RandomDataUtility();
-		String newsTitle = random.createRandomText();
+		String newsTitle1 = random.createRandomText();
 
-		newnews.enterNewsTitleInsideTextBox(newsTitle);
+		newnews.enterNewsTitleInsideTextBox(newsTitle1);
 		newnews.clickOnSaveButton();
 
 	}
