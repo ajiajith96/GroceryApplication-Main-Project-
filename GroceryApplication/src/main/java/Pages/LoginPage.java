@@ -17,7 +17,9 @@ public class LoginPage {
 	@FindBy(xpath ="//input[@name=\"password\"]")private WebElement Password;
 	@FindBy(xpath ="//button[@class='btn btn-dark btn-block']")private WebElement SigninButton;
 	@FindBy(xpath ="//label[@for='remember']")private WebElement CheckBox;
-	
+	@FindBy(xpath = "//p[text()='Dashboard']")private WebElement Dashboard;
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")private WebElement LoginTitle;
+	//@FindBy(xpath = "")
 	
 	public void enterUserNameOnUserNameField(String userName) {
 		
@@ -33,6 +35,15 @@ public class LoginPage {
 	public void clickOnSigninButton() {
 	    SigninButton.click();
 	}
+	
+	public boolean isDashboardDisplayed() {
+		return Dashboard.isDisplayed();
+		}
+	
+	public String getTitleText() {
+		return LoginTitle.getText();
+	}
+	
 	
 }
 
