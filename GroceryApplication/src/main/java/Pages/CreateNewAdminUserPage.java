@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import Utilities.PageUtility;
+import Utilities.WaitUtility;
 import net.bytebuddy.build.HashCodeAndEqualsPlugin.Identity;
 
 public class CreateNewAdminUserPage {
@@ -15,11 +17,6 @@ public class CreateNewAdminUserPage {
 		PageFactory.initElements(driver, this);
 
 }
-	@FindBy(xpath = "//p[text()='Admin Users']/ancestor::div/a[contains(text(),'More info')]") private WebElement AdminUser;
-	
-	public void clickOnAdminUser() {
-		AdminUser.click(); 
-	}
 	
     @FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")private WebElement CreateNewAdminUser;
     @FindBy(id = "username")private WebElement username;
@@ -27,30 +24,44 @@ public class CreateNewAdminUserPage {
     @FindBy(xpath = "//select[@class='form-control' and @id = 'user_type']")private WebElement userType;
     @FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger' and @name='Create']")private WebElement save;
     @FindBy(xpath = "//div[@class='card-footer center']//a[text()='Reset']")private WebElement resetOnAddUser;
-	public void clickOnCreateNewAdminUser() {
+    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")private WebElement userCreatedAlert;
+	public CreateNewAdminUserPage clickOnCreateNewAdminUser() {
 		CreateNewAdminUser.click();
+		return this;
 	}
 	
-	public void enterUsernameOnUsernameField(String adminUserName) {
+	public CreateNewAdminUserPage enterUsernameOnUsernameField(String adminUserName) {
 		username.sendKeys(adminUserName);
+		return this;
 	}
 
-	public void enterPasswordOnPasswordField(String adminUserPassword) {
+	public CreateNewAdminUserPage enterPasswordOnPasswordField(String adminUserPassword) {
 		password.sendKeys(adminUserPassword);
+		return this;
 
 	}
 
-	public void selectUserType() {
-		Select select = new Select(userType);
-		select.selectByIndex(2);;
+	public CreateNewAdminUserPage selectUserType() {
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithIndex(userType, 2);
+		/*Select select = new Select(userType);
+		select.selectByIndex(2);*/
+		return this;
 	}
 
-	public void clickOnSave() {
+	public CreateNewAdminUserPage clickOnSave() {
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, save);
 		save.click();
+		return this;
 	}
 
-	public void clickOnReset() {
+	/*public CreateNewAdminUserPage clickOnReset() {
 		resetOnAddUser.click();
+		return this;
+	}*/
+	public boolean userCreatedSuccessfully() {
+		return userCreatedAlert.isDisplayed();
 	}
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")private WebElement searchUser;
@@ -63,28 +74,30 @@ public class CreateNewAdminUserPage {
 	
     @FindBy(xpath = "//div[@class='card-body']//a[text()='Reset']")private WebElement resetOnSearchUser;
 
-	public void clickOnSearch() {
+	public CreateNewAdminUserPage clickOnSearch() {
 		searchUser.click();
+		return this;
+    }
 
-	}
-
-	public void enterUsernameOnSearchbox() {
+	public CreateNewAdminUserPage enterUsernameOnSearchbox() {
 		usernameOnSearch.sendKeys("Ajith");
-		
+		return this;
 	}
 
-	public void selectUserTypeOnSearch() {
+	public CreateNewAdminUserPage selectUserTypeOnSearch() {
 		Select select = new Select(userTypeOnSearch);
 		select.selectByIndex(2);
-		
+		return this;
 	}
 
-	public void clickOnSearchInsideSearch() {
+	public CreateNewAdminUserPage clickOnSearchInsideSearch() {
 		search.click();
+		return this;
 	}
 
-	public void clickOnResetOnSearch() {
+	/*public CreateNewAdminUserPage clickOnResetOnSearch() {
 		resetOnSearchUser.click();
-	}
+		return this;
+	}*/
 	
 }

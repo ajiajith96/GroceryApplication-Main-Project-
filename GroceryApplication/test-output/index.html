@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestScript.CreateNewAdminUserPageTest" class="method navigator-link" hash-for-method="verifySearchAdminUsers">verifySearchAdminUsers</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestScript.CreateNewAdminUserPageTest" class="method navigator-link" hash-for-method="verifyUserAdminCreation">verifyUserAdminCreation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestScript.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithValidCredential">verifyUserLoginWithValidCredential</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestScript.HomeLogoutPageTest" class="method navigator-link" hash-for-method="verifyUserLogoutSuccessfully">verifyUserLogoutSuccessfully</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestScript.ManageNewsTest" class="method navigator-link" hash-for-method="verifyResetButtonFunctionality">verifyResetButtonFunctionality</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -136,59 +121,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestScript.CreateNewAdminUserPageTest</span>
+              <span class="class-name">TestScript.ManageNewsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySearchAdminUsers">
-                  </a> <!-- verifySearchAdminUsers -->
-                  <span class="method-name">verifySearchAdminUsers</span>
-                  <em>
-(Successfully search the given username exist or not)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserAdminCreation">
-                  </a> <!-- verifyUserAdminCreation -->
-                  <span class="method-name">verifyUserAdminCreation</span>
-                  <em>
-(Successfully create new user admin)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestScript.HomeLogoutPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserLogoutSuccessfully">
-                  </a> <!-- verifyUserLogoutSuccessfully -->
-                  <span class="method-name">verifyUserLogoutSuccessfully</span>
-                  <em>
-(Successfully user is logged out)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestScript.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserLoginWithValidCredential">
-                  </a> <!-- verifyUserLoginWithValidCredential -->
-                  <span class="method-name">verifyUserLoginWithValidCredential</span>
-                  <em>
-(Successfull user login with valid credential)                  </em>
+                  <a name="verifyResetButtonFunctionality">
+                  </a> <!-- verifyResetButtonFunctionality -->
+                  <span class="method-name">verifyResetButtonFunctionality</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,18 +143,17 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;ReportGeneration.Listeners&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestScript.LoginTest&quot;&gt;
+      &lt;class name=&quot;TestScript.ManageNewsTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyUserLoginWithValidCredential&quot;/&gt;
+          &lt;include name=&quot;verifyResetButtonFunctionality&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- TestScript.LoginTest --&gt;
-      &lt;class name=&quot;TestScript.HomeLogoutPageTest&quot;/&gt;
-      &lt;class name=&quot;TestScript.CreateNewAdminUserPageTest&quot;/&gt;
+      &lt;/class&gt; &lt;!-- TestScript.ManageNewsTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -228,7 +167,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (3 classes)</span>
+                <span class="test-name">Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -254,28 +193,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserAdminCreation')
-data.setCell(0, 2, 'TestScript.CreateNewAdminUserPageTest')
-data.setCell(0, 3, 6337);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifySearchAdminUsers')
-data.setCell(1, 2, 'TestScript.CreateNewAdminUserPageTest')
-data.setCell(1, 3, 4729);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyUserLoginWithValidCredential')
-data.setCell(2, 2, 'TestScript.LoginTest')
-data.setCell(2, 3, 3682);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyUserLogoutSuccessfully')
-data.setCell(3, 2, 'TestScript.HomeLogoutPageTest')
-data.setCell(3, 3, 2776);
+data.setCell(0, 1, 'verifyResetButtonFunctionality')
+data.setCell(0, 2, 'TestScript.ManageNewsTest')
+data.setCell(0, 3, 3661);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -290,17 +217,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">TestScript.LoginTest</span>
+              <span class="ignored-class-name">TestScript.ManageNewsTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyValidUsernameAndInvalidPassword</span>
+                <span class="ignored-method-name">verifyUserIsAbleToAddNewNewsContent</span>
                 <br/>
-                <span class="ignored-method-name">verifyInvalidUsernameAndValidPassword</span>
-                <br/>
-                <span class="ignored-method-name">verifyUserLoginWithWrongCredential</span>
+                <span class="ignored-method-name">verifySearchForNewNewsTitle</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -312,60 +237,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestScript.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestScript.ManageNewsTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
+                <span class="method-name">initializeBrowser(firefox)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserLoginWithValidCredential</span>
-                <span class="method-start">10987 ms</span>
+                <span class="method-name">verifyResetButtonFunctionality</span>
+                <span class="method-start">6530 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyUserLoginWithValidCredential status=SUCCESS method=LoginTest.verifyUserLoginW...)</span>
-                <span class="method-start">14687 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">TestScript.HomeLogoutPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">14701 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserLogoutSuccessfully</span>
-                <span class="method-start">23508 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyUserLogoutSuccessfully status=SUCCESS method=HomeLogoutPageTest.verifyUserLog...)</span>
-                <span class="method-start">26298 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">TestScript.CreateNewAdminUserPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">26312 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifySearchAdminUsers</span>
-                <span class="method-start">35517 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifySearchAdminUsers status=SUCCESS method=CreateNewAdminUserPageTest.verifySearc...)</span>
-                <span class="method-start">40250 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
-                <span class="method-start">40257 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserAdminCreation</span>
-                <span class="method-start">50490 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyUserAdminCreation status=SUCCESS method=CreateNewAdminUserPageTest.verifyUser...)</span>
-                <span class="method-start">56835 ms</span>
+                <span class="method-name">driverQuit([TestResult name=verifyResetButtonFunctionality status=SUCCESS method=ManageNewsTest.verifyResetButt...)</span>
+                <span class="method-start">10214 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

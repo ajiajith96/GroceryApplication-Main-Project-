@@ -13,7 +13,6 @@ public class ManageNewsPage {
 
 	}
 	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")private WebElement ManageNews;
 
 	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add' and @class='btn btn-rounded btn-danger']")private WebElement NewNews;
@@ -32,36 +31,41 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")
 	private WebElement resetButton;
 
-	public void clickOnManageNews() {
-		ManageNews.click();
-	}
+	
 
-	public void clickOnNewNews() {
+	public ManageNewsPage clickOnNewNews() {
 		NewNews.click();
+		return this;
 	}
 
-	public void enterNewsTitleInsideTextBox(String newsTitle) {
+	public ManageNewsPage enterNewsTitleInsideTextBox(String newsTitle) {
 		textbox.sendKeys(newsTitle);
+		return this;
 	}
 
-	public void clickOnSaveButton() {
+	public ManageNewsPage clickOnSaveButton() {
 		saveButton.click();
+		return this;
 	}
 
-	public void clickOnSearch() {
+	public ManageNewsPage clickOnSearch() {
 		searchNews.click();
+		return this;
 	}
 
-	public void enterNewsTitlInsideSearchBox(String newsTitle) {
+	public ManageNewsPage enterNewsTitlInsideSearchBox(String newsTitle) {
 		searchTextBox.sendKeys(newsTitle);
+		return this;
 	}
 
-	public void clickOnSearchResultButton() {
+	public ManageNewsPage clickOnSearchResultButton() {
 		searchResultButton.click();
+		return this;
 	}
 
-	public void clickOnResetButton() {
+	public ManageNewsPage clickOnResetButton() {
 		resetButton.click();
+		return this;
 	}
 }
 	

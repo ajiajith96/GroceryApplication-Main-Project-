@@ -5,30 +5,31 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import AutomationCore.TestngBase;
+import Pages.HomeLogoutPage;
 import Pages.LoginPage;
 import Pages.ManageNewsPage;
 import Utilities.ExcelUtility;
 import Utilities.RandomDataUtility;
 
 public class ManageNewsTest extends TestngBase {
+	HomeLogoutPage homelogoutpage;
+	ManageNewsPage newnews;
+	
 	@Test
 	public void verifyUserIsAbleToAddNewNewsContent() throws IOException {
 		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userName);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnCheckBox();
-		loginpage.clickOnSigninButton();
-		ManageNewsPage newnews = new ManageNewsPage(driver);
-		newnews.clickOnManageNews();
+		loginpage.enterUserNameOnUserNameField(userName).enterPasswordOnPasswordField(password).clickOnCheckBox();
+		homelogoutpage=loginpage.clickOnSigninButton();
+		//ManageNewsPage newnews = new ManageNewsPage(driver);
+		newnews=homelogoutpage.clickOnManageNews();
 		newnews.clickOnNewNews();
 		String newsTitle = ExcelUtility.getStringData(1, 0, "NewsPage");
 		RandomDataUtility random = new RandomDataUtility();
-		String newsTitle1 = random.createRandomText();
+		//String newsTitle = random.createRandomText();
 
-		newnews.enterNewsTitleInsideTextBox(newsTitle1);
-		newnews.clickOnSaveButton();
+		newnews.enterNewsTitleInsideTextBox(newsTitle).clickOnSaveButton();
 
 	}
 
@@ -39,32 +40,33 @@ public class ManageNewsTest extends TestngBase {
 
 		LoginPage login = new LoginPage(driver);
 
-		login.enterUserNameOnUserNameField(userName);
-		login.enterPasswordOnPasswordField(password);
-		login.clickOnSigninButton();
+		login.enterUserNameOnUserNameField(userName).enterPasswordOnPasswordField(password);
+		homelogoutpage=login.clickOnSigninButton();
 
-		ManageNewsPage newnews = new ManageNewsPage(driver);
-		newnews.clickOnManageNews();
+		//ManageNewsPage newnews = new ManageNewsPage(driver);
+		newnews=homelogoutpage.clickOnManageNews();
 		newnews.clickOnSearch();
 		String newsTitle = ExcelUtility.getStringData(1, 0, "NewsPage");
-		newnews.enterNewsTitlInsideSearchBox(newsTitle);
-		newnews.clickOnSearchResultButton();
+		newnews.enterNewsTitlInsideSearchBox(newsTitle).clickOnSearchResultButton();
 	}
 
 	@Test
 	public void verifyResetButtonFunctionality() throws IOException {
 		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameField(userName).enterPasswordOnPasswordField(password).clickOnCheckBox();
+		homelogoutpage=loginpage.clickOnSigninButton();
+		//ManageNewsPage newnews = new ManageNewsPage(driver);
+		newnews=homelogoutpage.clickOnManageNews();
+		newnews.clickOnSearch();
+		String newsTitle = ExcelUtility.getStringData(1, 0, "NewsPage");
+		RandomDataUtility random = new RandomDataUtility();
+		//String newsTitle = random.createRandomText();
 
-		LoginPage login = new LoginPage(driver);
-
-		login.enterUserNameOnUserNameField(userName);
-		login.enterPasswordOnPasswordField(password);
-		login.clickOnSigninButton();
-
-		ManageNewsPage news = new ManageNewsPage(driver);
-		news.clickOnManageNews();
-		news.clickOnResetButton();
+		//newnews.enterNewsTitleInsideTextBox(newsTitle).clickOnSaveButton();
+		//ManageNewsPage newnews = new ManageNewsPage(driver);
+		newnews.clickOnSearchResultButton().clickOnResetButton();
 	}
 
 		

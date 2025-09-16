@@ -15,12 +15,30 @@ public class HomeLogoutPage {
 }
 	@FindBy(xpath = "//a[@data-toggle='dropdown']")private WebElement admineButton;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")private WebElement LogoutButton;
+	@FindBy(xpath ="//button[@class='btn btn-dark btn-block']")private WebElement SigninButton;
+	@FindBy(xpath = "//p[text()='Admin Users']/ancestor::div/a[contains(text(),'More info')]") private WebElement AdminUser;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")private WebElement ManageNews;
+
 	
-	public void clickOnAdmineButton() {
+	public HomeLogoutPage clickOnAdmineButton() {
 		admineButton.click();
+		return this;
 	}
 
-	public void clickOnLogoutButton() {
+	public LoginPage clickOnLogoutButton() {
 		LogoutButton.click();
+		return new LoginPage(driver);
+	}
+	public boolean userLoggedout() {
+		return SigninButton.isDisplayed();
+	}
+
+	public CreateNewAdminUserPage clickOnAdminUser() {
+		AdminUser.click(); 
+		return new CreateNewAdminUserPage(driver);
+	}
+	public ManageNewsPage clickOnManageNews() {
+		ManageNews.click();
+		return new ManageNewsPage(driver);
 	}
 }

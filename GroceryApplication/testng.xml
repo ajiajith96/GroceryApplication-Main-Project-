@@ -4,15 +4,15 @@
 <listeners>
 <listener class-name="ReportGeneration.Listeners"></listener>
 </listeners>
+<parameter name="browser" value="firefox"></parameter>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestScript.LoginTest">
+      <class name="TestScript.ManageNewsTest">
       <methods>
-      <include name="verifyUserLoginWithValidCredential"></include>
+      <include name="verifyResetButtonFunctionality"></include>
       </methods>
       </class>
-      <class name="TestScript.HomeLogoutPageTest"/>
-      <class name="TestScript.CreateNewAdminUserPageTest"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
